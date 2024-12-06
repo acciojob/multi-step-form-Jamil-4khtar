@@ -8,37 +8,7 @@ import StepThree from "./StepThree";
 const App = () => {
   const [step, setStep] = useState(1)
   const [formData, setFormData] = useState({});
-  switch (step) {
-    case 1:
-      return (
-        <div>
-          <StepOne formData={formData} setFormData={setFormData} nextStep={nextStep} />
-        </div>
-      )
-      break;
-    case 2:
-      return (
-        <div>
-          <StepTwo formData={formData} setFormData={setFormData} nextStep={nextStep} prevStep={prevStep} />
-        </div>
-      )
-      break;
-    case 3:
-      return (
-        <div>
-          <StepThree formData={formData} setFormData={setFormData} prevStep={prevStep} handleSubmit={handleSubmit} />
-        </div>
-      )
-      break;
-
-    default:
-      return (
-        <div>
-          {/* Do not remove the main div */}
-        </div>
-      )
-  }
-
+  
   function nextStep() {
     setStep(prevStep => prevStep + 1)
   }
@@ -49,6 +19,15 @@ const App = () => {
     e.preventDefault();
     console.log(formData);
   }
+
+  return (
+    <div>
+      {/* Do not remove the main div */}
+      {step == 3 && <StepThree formData={formData} setFormData={setFormData} prevStep={prevStep} handleSubmit={handleSubmit} />}
+      {step == 2 && <StepTwo formData={formData} setFormData={setFormData} nextStep={nextStep} prevStep={prevStep} />}
+      {step == 1 && <StepOne formData={formData} setFormData={setFormData} nextStep={nextStep} />}
+    </div>
+  )
 
 }
 
