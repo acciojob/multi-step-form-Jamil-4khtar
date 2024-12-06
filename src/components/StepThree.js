@@ -15,7 +15,7 @@ function StepThree(props) {
         justifyContent: "space-between"
     }
     return (
-        <div className='form'>
+        <div className='form' id='step3'>
             <label htmlFor='card_info'>Card Info:</label>
             <input type='text' id='card_info' name='card_info'
                 value={props.formData.card_info}

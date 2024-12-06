@@ -15,7 +15,7 @@ function StepTwo(props) {
     }
 
     return (
-        <div className='form'>
+        <div className='form' id='step2'>
             <label htmlFor='model'>Model:</label>
             <input type='text' id='model' name='model'
                 value={props.formData.model}

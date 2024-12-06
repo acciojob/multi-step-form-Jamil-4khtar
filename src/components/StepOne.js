@@ -13,7 +13,7 @@ function StepOne(props) {
         left: "135px"
     }
     return (
-        <div className='form'>
+        <div className='form' id='step1'>
             <label htmlFor='first_name'>First Name:</label>
             <input type='text' id='first_name' name='first_name'
                 value={props.formData.first_name}
